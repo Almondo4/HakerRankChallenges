@@ -1,0 +1,66 @@
+
+from operator import itemgetter
+
+grades=[]
+
+def sortStudents(students):
+    
+    return sorted(students, key=itemgetter(1))
+    
+       
+def removeWrost(students):
+    
+    # Removing the best
+    minimum = students[0][1]
+    newList = []
+    for student in students:
+        
+        
+        if student[1] != minimum:
+            newList.append(student)
+    return newList
+    
+    
+def runnerUp(students):
+    maximum = students[0][1]
+    runnerUp=[]
+    # runnerUp = [x for student in students if students[1] == maximum]
+    for student in students:
+        if student[1] == maximum:
+            runnerUp.append(student)
+    return runnerUp
+    
+def runnerNames(students):
+    
+    names =[]
+    for student in students:
+        
+        names.append(student[0])
+     
+    return sorted(names)
+    
+   
+    
+for _ in range(int(input())):
+    name = input()
+    score = float(input())
+    grades.append([name,score])
+
+
+    # sort
+grades = sortStudents(grades)
+# print("SOrted",grades)
+
+    #find second best 
+grades = removeWrost(grades)
+# print("frist removed: \n",grades)
+
+    #runnerUPs 
+grades = runnerUp(grades)
+# print("RunnerUP: \n",grades)
+
+    # GetNames
+    
+grades = runnerNames(grades)
+    # Result
+print("\n".join(grades))
