@@ -1,0 +1,12 @@
+from __future__ import print_function
+
+def concatlist(n):
+    
+    if 1<= n<=150:
+        for i in range(n):
+            print(i+1, end="")
+
+if __name__ == '__main__':
+    n = int(raw_input())
+    concatlist(n)
+
