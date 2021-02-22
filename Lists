@@ -1,0 +1,30 @@
+mylist =[]
+functions = []
+
+
+
+if __name__ == '__main__':
+    N = int(input())
+    
+    for x in range(N):
+        functions.append(input())
+    
+    functions1 = [x.split(" ") for x in functions]    
+    
+    
+    for x in range(N):
+        
+        if functions1[x][0] == "insert": mylist.insert(int(functions1[x][1]), int(functions1[x][2]))
+        elif functions1[x][0] == "print": print (mylist)
+        elif functions1[x][0] == "append":mylist.append(int(functions1[x][1]))
+        elif functions1[x][0] == "remove": mylist.remove(int(functions1[x][1]))
+        elif functions1[x][0] == "sort": mylist.sort()
+        elif functions1[x][0] == "pop": mylist.pop()
+        elif functions1[x][0] == "reverse": mylist.reverse()
+        
+        
+        
+        
+        
+# print(functions)
+# print(functions1)
